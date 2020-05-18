@@ -27,8 +27,8 @@ const getBeers = (dispatch) => {
 };
 
 const addBeer = () => {
-  return async (name, brewery, bottleDate, abv, ibu, description, callback) => {
-    await jsonServer.post('/beers', { name, brewery, bottleDate, abv, ibu, description });
+  return async (name, brewery, beerStyle, bottleDate, abv, ibu, description, callback) => {
+    await jsonServer.post('/beers', { name, brewery, beerStyle, bottleDate, abv, ibu, description });
     if (callback) {
       callback();
     }
@@ -44,11 +44,11 @@ const deleteBeer =(dispatch) => {
   };
 };
 const editBeer = (dispatch) => {
-  return async (id, name, brewery, bottleDate, abv, ibu, description, callback) => {
-    await jsonServer.put(`/beers/${id}`, { name, brewery, bottleDate, abv, ibu, description });
+  return async (id, name, brewery, beerStyle, bottleDate, abv, ibu, description, callback) => {
+    await jsonServer.put(`/beers/${id}`, { name, brewery, beerStyle, bottleDate, abv, ibu, description });
     dispatch({ 
       type: 'edit_beer', 
-      payload: { id, name, brewery, bottleDate, abv, ibu, description }
+      payload: { id, name, brewery, beerStyle, bottleDate, abv, ibu, description }
     });
     if (callback) {
       callback();

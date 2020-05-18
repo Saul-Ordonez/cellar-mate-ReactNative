@@ -14,6 +14,8 @@ const ShowScreen = ({ navigation }) => {
       <Text>{beer.name}</Text>
       <Text>Brewery</Text>
       <Text>{beer.brewery}</Text>
+      <Text>Style</Text>
+      <Text>{beer.beerStyle}</Text>
       <Text>Date Bottled</Text>
       <Text>{beer.bottleDate}</Text>
       <Text>ABV</Text>

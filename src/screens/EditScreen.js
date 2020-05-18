@@ -15,14 +15,15 @@ const EditScreen = ({ navigation }) => {
     <CreateBeerForm
       initialValues={{ 
         name: beer.name, 
-        brewery: beer.brewery, 
+        brewery: beer.brewery,
+        beerStyle: beer.beerStyle,
         bottleDate: beer.bottleDate,
         abv: beer.abv,
         ibu: beer.ibu,
         description: beer.description
       }}
-      onSubmit={(name, brewery, bottleDate, abv, ibu, description) => {
-        editBeer(id, name, brewery, bottleDate, abv, ibu, description, () => navigation.pop());
+      onSubmit={(name, brewery, beerStyle, bottleDate, abv, ibu, description) => {
+        editBeer(id, name, brewery, beerStyle, bottleDate, abv, ibu, description, () => navigation.pop());
       }}
     />
   );

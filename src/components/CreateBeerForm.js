@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
 const CreateBeerForm = ({ onSubmit, initialValues }) => {
   const [name, setName] = useState(initialValues.name);
   const [brewery, setBrewery] = useState(initialValues.brewery);
+  const [beerStyle, setBeerStyle] = useState(initialValues.description);
   const [bottleDate, setBottleDate] = useState(initialValues.bottleDate);
   const [abv, setAbv] = useState(initialValues.abv);
   const [ibu, setIbu] = useState(initialValues.ibu);
@@ -22,6 +23,12 @@ const CreateBeerForm = ({ onSubmit, initialValues }) => {
         style={styles.input} 
         value={brewery} 
         onChangeText={(text) => setBrewery(text)} 
+      />
+      <Text style={styles.label}>Style</Text>
+      <TextInput 
+        style={styles.input} 
+        value={beerStyle} 
+        onChangeText={(text) => setBeerStyle(text)} 
       />
       <Text style={styles.label}>Date Bottled</Text>
       <TextInput 
@@ -49,7 +56,7 @@ const CreateBeerForm = ({ onSubmit, initialValues }) => {
       />
       <Button 
         title='Save Beer'
-        onPress={() => onSubmit(name, brewery, bottleDate, abv, ibu, description)}
+        onPress={() => onSubmit(name, brewery, beerStyle, bottleDate, abv, ibu, description)}
       />
     </View>
   );
@@ -59,6 +66,7 @@ CreateBeerForm.defaultProps = {
   initialValues: {
     name: '',
     brewery: '',
+    beerStyle: '',
     bottleDate: '',
     abv: '',
     ibu: '',

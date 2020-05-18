@@ -8,8 +8,8 @@ const CreateScreen = ({ navigation }) => {
 
   return (
     <CreateBeerForm
-      onSubmit={(name, brewery, bottleDate, abv, ibu, description) => {
-        addBeer(name, brewery, bottleDate, abv, ibu, description, () => navigation.navigate('Index'));
+      onSubmit={(name, brewery, beerStyle,  bottleDate, abv, ibu, description) => {
+        addBeer(name, brewery, beerStyle, bottleDate, abv, ibu, description, () => navigation.navigate('Index'));
       }}
     />
   );
