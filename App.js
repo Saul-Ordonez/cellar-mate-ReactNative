@@ -6,16 +6,18 @@ import { Provider } from './src/context/CellarContext';
 import ShowScreen from './src/screens/ShowScreen';
 import CreateScreen from './src/screens/CreateScreen';
 import EditScreen from './src/screens/EditScreen';
+import HomeScreen from './src/screens/HomeScreen';
 
 const navigator = createStackNavigator(
   {
   Index: IndexScreen,
   Show: ShowScreen,
   Create: CreateScreen,
-  Edit: EditScreen
+  Edit: EditScreen,
+  Home: HomeScreen
   }, 
   {
-    initialRouteName: 'Index',
+    initialRouteName: 'Home',
     defaultNavigationOptions: {
       title: 'Cellar Mate'
     }
