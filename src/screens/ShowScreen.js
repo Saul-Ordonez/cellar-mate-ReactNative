@@ -1,29 +1,33 @@
 import React, { useContext } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 import { Context } from '../context/CellarContext';
 import { EvilIcons } from '@expo/vector-icons';
 
 const ShowScreen = ({ navigation }) => {
-  const { state } = useContext(Context);
+  const { state, deleteBeer } = useContext(Context);
 
   const beer = state.find((beer) => beer.id === navigation.getParam('id'));
 
   return (
-    <View>
-      <Text>Beer Name</Text>
-      <Text>{beer.name}</Text>
-      <Text>Brewery</Text>
-      <Text>{beer.brewery}</Text>
-      <Text>Style</Text>
-      <Text>{beer.beerStyle}</Text>
-      <Text>Date Bottled</Text>
-      <Text>{beer.bottleDate}</Text>
-      <Text>ABV</Text>
-      <Text>{beer.abv}%</Text>
-      <Text>IBU</Text>
-      <Text>{beer.ibu}</Text>
-      <Text>Description</Text>
-      <Text>{beer.description}</Text>
+    <View style={styles.viewStyle}>
+      <Text style={styles.labelStyle}>Beer Name</Text>
+      <Text style={styles.input}>{beer.name}</Text>
+      <Text style={styles.labelStyle}>Brewery</Text>
+      <Text style={styles.input}>{beer.brewery}</Text>
+      <Text style={styles.labelStyle}>Style</Text>
+      <Text style={styles.input}>{beer.beerStyle}</Text>
+      <Text style={styles.labelStyle}>Date Bottled</Text>
+      <Text style={styles.input}>{beer.bottleDate}</Text>
+      <Text style={styles.labelStyle}>ABV</Text>
+      <Text style={styles.input}>{beer.abv}%</Text>
+      <Text style={styles.labelStyle}>IBU</Text>
+      <Text style={styles.input}>{beer.ibu}</Text>
+      <Text style={styles.labelStyle}>Description</Text>
+      <Text style={styles.input}>{beer.description}</Text>
+      {/* <Button 
+        title='Delete'
+        onPress={() => deleteBeer(beer.id), () => navigation.navigate('Index')}
+      /> */}
     </View>
   );
 };
@@ -46,6 +50,17 @@ const styles = StyleSheet.create({
   editBeerStyle: {
     fontSize: 35,
     marginRight: 10,
+  },
+  labelStyle: {
+    fontWeight: 'bold',
+    marginTop: 15,
+  },
+  input: {
+
+  },
+  viewStyle: {
+    alignItems: 'center',
+    marginTop: 10,
   }
 });
 
