@@ -21,7 +21,7 @@ const CreateBeerForm = ({ onSubmit, initialValues }) => {
       <Text style={styles.label}>Brewery</Text>
       <TextInput 
         style={styles.input} 
-        value={brewery} 
+        value={brewery}
         onChangeText={(text) => setBrewery(text)} 
       />
       <Text style={styles.label}>Style</Text>
@@ -48,7 +48,7 @@ const CreateBeerForm = ({ onSubmit, initialValues }) => {
         value={ibu} 
         onChangeText={(text) => setIbu(text)} 
       />
-      <Text style={styles.label}>Description</Text>
+      <Text style={styles.label}>Description / Notes</Text>
       <TextInput 
         style={styles.input} 
         value={description} 

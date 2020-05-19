@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, Button } from 'react-native';
 import { Context } from '../context/CellarContext';
 import { Feather } from '@expo/vector-icons';
 
@@ -21,7 +21,7 @@ const IndexScreen = ({ navigation }) => {
   return (
     <View>
       <FlatList  
-        data={state}
+        data={state.sort((a,b) => a.name.localeCompare(b.name))}
         keyExtractor={(beer) => beer.name}
         renderItem={({ item }) => {
         return (
