@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, Button } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, Button, Image } from 'react-native';
 import { Context } from '../context/CellarContext';
 import { Feather } from '@expo/vector-icons';
 
@@ -48,6 +48,17 @@ IndexScreen.navigationOptions = ({ navigation }) => {
       <TouchableOpacity onPress={() => navigation.navigate('Create')}>
         <Feather name='plus' style={styles.addBeerStyle} />
       </TouchableOpacity>
+    ),
+    headerTitle: (
+      <Image
+        style={{
+          width: 125,
+          height: 125,
+          alignSelf: 'center',
+          resizeMode: 'contain',
+        }}
+        source={require('../img/title1.png')}
+      />
     )
   };
 };

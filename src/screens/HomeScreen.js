@@ -1,21 +1,20 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, Image, TouchableOpacity } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
   return (
     <View>
-      <Text style={styles.image} >Image Goes Here</Text>
+      <Image
+        style={styles.image}
+        source={require('../img/logo1.png')} 
+      />
       <View style={styles.buttonGroup} >
-        <Button
-          style={styles.cellarButton}
-          title='View your cellar'
-          onPress={() => navigation.navigate('Index')}
-        />
-        <Button 
-          style={styles.addBeerButton}
-          title='Add a beer'
-          onPress={() => navigation.navigate('Create')}
-        />
+      <TouchableOpacity onPress={() => navigation.navigate('Index')}>
+          <Image style={styles.cellarIcon} source={require('../img/add_icon.png')} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Create')}>
+          <Image style={styles.addIcon} source={require('../img/add_icon.png')} />
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -23,28 +22,29 @@ const HomeScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   buttonGroup: {
-    marginTop: 75,
+    marginTop: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
-  cellarButton: {
-    marginTop: 25,
-    borderColor: 'red',
-    borderWidth: 2,
+  cellarIcon: {
+    width: 100,
+    height: 100,
   },
-  addBeerButton: {
-
+  addIcon: {
+    marginTop: 50,
+    width: 100,
+    height: 100,
+    paddingLeft: 15,
   },
   image: {
-    borderWidth: 2,
-    borderColor: 'red',
-    marginLeft: 20,
-    marginRight: 20,
     marginTop: 50,
     paddingTop: 125,
     paddingBottom: 125,
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: 18
+    height: 300,
+    width: 300,
+    alignSelf: 'center',
   }
+
 });
 
 export default HomeScreen;
