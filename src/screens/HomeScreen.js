@@ -22,8 +22,8 @@ const HomeScreen = ({ navigation }) => {
 
 HomeScreen.navigationOptions = () => {
   return {
-    header: (
-      null
+    headerShown: (
+      false
     )
   };
 };

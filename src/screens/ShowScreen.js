@@ -24,10 +24,10 @@ const ShowScreen = ({ navigation }) => {
       <Text style={styles.input}>{beer.ibu}</Text>
       <Text style={styles.labelStyle}>Description</Text>
       <Text style={styles.input}>{beer.description}</Text>
-      {/* <Button 
+      <Button 
         title='Delete'
-        onPress={() => deleteBeer(beer.id), () => navigation.navigate('Index')}
-      /> */}
+        onPress={() => deleteBeer(beer.id)}
+      />
     </View>
   );
 };
@@ -53,7 +53,8 @@ ShowScreen.navigationOptions = ({ navigation }) => {
         }}
         source={require('../img/title1.png')}
       />
-    )
+    ),
+    headerBackTitle: 'Back'
   };
 };
 

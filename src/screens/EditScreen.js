@@ -41,7 +41,8 @@ EditScreen.navigationOptions = () => {
         }}
         source={require('../img/title1.png')}
       />
-    )
+    ),
+    headerBackTitle: 'Back'
   };
 };
 
