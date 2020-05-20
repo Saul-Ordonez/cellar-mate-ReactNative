@@ -20,6 +20,14 @@ const HomeScreen = ({ navigation }) => {
   );
 };
 
+HomeScreen.navigationOptions = () => {
+  return {
+    header: (
+      null
+    )
+  };
+};
+
 const styles = StyleSheet.create({
   buttonGroup: {
     flexDirection: 'row',
@@ -37,7 +45,7 @@ const styles = StyleSheet.create({
     marginRight: 60,
   },
   image: {
-    marginTop: 10,
+    marginTop: 40,
     paddingTop: 125,
     paddingBottom: 125,
     height: 340,
