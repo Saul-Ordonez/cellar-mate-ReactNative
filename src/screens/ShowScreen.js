@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Button, Image } from 'react-native';
 import { Context } from '../context/CellarContext';
 import { EvilIcons } from '@expo/vector-icons';
 
@@ -42,6 +42,17 @@ ShowScreen.navigationOptions = ({ navigation }) => {
       >
         <EvilIcons name='pencil' style={styles.editBeerStyle} />
       </TouchableOpacity>
+    ),
+    headerTitle: (
+      <Image
+        style={{
+          width: 125,
+          height: 125,
+          alignSelf: 'center',
+          resizeMode: 'contain',
+        }}
+        source={require('../img/title1.png')}
+      />
     )
   };
 };

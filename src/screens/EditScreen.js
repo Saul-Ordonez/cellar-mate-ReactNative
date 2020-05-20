@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Image } from 'react-native';
 import { Context } from '../context/CellarContext';
 import CreateBeerForm from '../components/CreateBeerForm';
 
@@ -27,6 +27,22 @@ const EditScreen = ({ navigation }) => {
       }}
     />
   );
+};
+
+EditScreen.navigationOptions = () => {
+  return {
+    headerTitle: (
+      <Image
+        style={{
+          width: 125,
+          height: 125,
+          alignSelf: 'center',
+          resizeMode: 'contain',
+        }}
+        source={require('../img/title1.png')}
+      />
+    )
+  };
 };
 
 const styles = StyleSheet.create({

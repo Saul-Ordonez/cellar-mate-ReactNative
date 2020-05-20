@@ -3,17 +3,17 @@ import { View, Text, StyleSheet, Button, Image, TouchableOpacity } from 'react-n
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <View>
+    <View style={{ backgroundColor: 'white' }} >
       <Image
         style={styles.image}
         source={require('../img/logo1.png')} 
       />
       <View style={styles.buttonGroup} >
       <TouchableOpacity onPress={() => navigation.navigate('Index')}>
-          <Image style={styles.cellarIcon} source={require('../img/add_icon.png')} />
+          <Image style={styles.cellarIcon} source={require('../img/view_icon.png')} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Create')}>
-          <Image style={styles.addIcon} source={require('../img/add_icon.png')} />
+          <Image style={styles.addIcon} source={require('../img/add_icon-1.png')} />
         </TouchableOpacity>
       </View>
     </View>
@@ -22,26 +22,26 @@ const HomeScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   buttonGroup: {
-    marginTop: 10,
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   cellarIcon: {
-    width: 100,
-    height: 100,
+    height: 170,
+    width: 140,
+    marginLeft: 50,
+    marginTop: 10,
   },
   addIcon: {
-    marginTop: 50,
-    width: 100,
-    height: 100,
-    paddingLeft: 15,
+    height: 180,
+    width: 80,
+    marginRight: 60,
   },
   image: {
-    marginTop: 50,
+    marginTop: 10,
     paddingTop: 125,
     paddingBottom: 125,
-    height: 300,
-    width: 300,
+    height: 340,
+    width: 340,
     alignSelf: 'center',
   }
 
