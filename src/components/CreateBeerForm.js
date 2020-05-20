@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const CreateBeerForm = ({ onSubmit, initialValues }) => {
   const [name, setName] = useState(initialValues.name);
@@ -11,6 +12,7 @@ const CreateBeerForm = ({ onSubmit, initialValues }) => {
   const [description, setDescription] = useState(initialValues.description);
 
   return (
+  <ScrollView>
     <View>
       <Text style={styles.label}>Beer Name</Text>
       <TextInput 
@@ -50,7 +52,8 @@ const CreateBeerForm = ({ onSubmit, initialValues }) => {
       />
       <Text style={styles.label}>Description / Notes</Text>
       <TextInput 
-        style={styles.input} 
+        style={styles.input}
+        multiline={true}
         value={description} 
         onChangeText={(text) => setDescription(text)} 
       />
@@ -59,6 +62,7 @@ const CreateBeerForm = ({ onSubmit, initialValues }) => {
         onPress={() => onSubmit(name, brewery, beerStyle, bottleDate, abv, ibu, description)}
       />
     </View>
+  </ScrollView>
   );
 };
 
@@ -87,6 +91,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 5,
     marginLeft: 5,
+    textAlign: 'center',
   }
 });
 
