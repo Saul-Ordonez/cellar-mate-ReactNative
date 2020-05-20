@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Button, Image, TouchableOpacity } from 'react-n
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <View style={{ backgroundColor: 'white' }} >
+    <View>
       <Image
         style={styles.image}
         source={require('../img/logo1.png')} 
