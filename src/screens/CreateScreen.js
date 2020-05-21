@@ -28,7 +28,8 @@ CreateScreen.navigationOptions = () => {
         source={require('../img/title1.png')}
       />
     ),
-    headerBackTitle: 'Back'
+    headerBackTitle: 'Back',
+    headerTintColor: 'black'
   };
 };
 

@@ -24,10 +24,10 @@ const ShowScreen = ({ navigation }) => {
       <Text style={styles.input}>{beer.ibu}</Text>
       <Text style={styles.labelStyle}>Description</Text>
       <Text style={styles.input}>{beer.description}</Text>
-      <Button 
+      {/* <Button 
         title='Delete'
-        onPress={() => deleteBeer(beer.id)}
-      />
+        onPress={() => deleteBeer(beer.id), () => navigation.navigate('Index')}
+      /> */}
     </View>
   );
 };
@@ -54,7 +54,8 @@ ShowScreen.navigationOptions = ({ navigation }) => {
         source={require('../img/title1.png')}
       />
     ),
-    headerBackTitle: 'Back'
+    headerBackTitle: 'Back',
+    headerTintColor: 'black'
   };
 };
 
@@ -72,7 +73,10 @@ const styles = StyleSheet.create({
   },
   viewStyle: {
     alignItems: 'center',
-    marginTop: 10,
+    backgroundColor: '#ded7cd',
+    paddingBottom: 500,
+    paddingTop: 10,
+    
   }
 });
 

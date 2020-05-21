@@ -1,7 +1,6 @@
 import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import { Image, StyleSheet } from 'react-native';
 import IndexScreen from './src/screens/IndexScreen';
 import { Provider } from './src/context/CellarContext';
 import ShowScreen from './src/screens/ShowScreen';

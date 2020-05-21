@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 
 const CreateBeerForm = ({ onSubmit, initialValues }) => {
   const [name, setName] = useState(initialValues.name);
@@ -13,7 +13,7 @@ const CreateBeerForm = ({ onSubmit, initialValues }) => {
 
   return (
   <ScrollView>
-    <View>
+    <View style={styles.mainView}>
       <Text style={styles.label}>Beer Name</Text>
       <TextInput 
         style={styles.input} 
@@ -57,10 +57,9 @@ const CreateBeerForm = ({ onSubmit, initialValues }) => {
         value={description} 
         onChangeText={(text) => setDescription(text)} 
       />
-      <Button 
-        title='Save Beer'
-        onPress={() => onSubmit(name, brewery, beerStyle, bottleDate, abv, ibu, description)}
-      />
+      <TouchableOpacity onPress={() => onSubmit(name, brewery, beerStyle, bottleDate, abv, ibu, description)} style={styles.btnStyle} >
+        <Text style={styles.btnTextStyle}>Save Beer</Text>
+      </TouchableOpacity>
     </View>
   </ScrollView>
   );
@@ -83,15 +82,37 @@ const styles = StyleSheet.create({
     fontSize: 18,
     borderWidth: 1,
     borderColor: 'black',
+    borderRadius: 15,
     marginBottom: 15,
     padding: 5,
     margin: 5,
+    marginRight: 25,
+    marginLeft: 25,
   },
   label: {
     fontSize: 20,
     marginBottom: 5,
     marginLeft: 5,
     textAlign: 'center',
+  },
+  mainView: {
+    marginTop: 15,
+  },
+  btnStyle: {
+    borderWidth: 1,
+    borderColor: 'black',
+    alignItems: 'center',
+    marginHorizontal: 85,
+    paddingVertical: 15,
+    marginVertical: 20,
+    marginBottom: 40,
+    backgroundColor: 'black',
+    borderRadius: 10,
+  },
+  btnTextStyle: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 18,
   }
 });
 
