@@ -6,20 +6,19 @@ const HomeScreen = ({ navigation }) => {
     <View 
       // style={{
       //   backgroundColor: '#0a2165', 
-      //   marginTop: 22,
-      //   paddingBottom: 100,
+      //   paddingBottom: 150,
       // }} 
     >
       <Image
         style={styles.image}
-        source={require('../img/logo1.png')} 
+        source={require('../img/logo.png')} 
       />
       <View style={styles.buttonGroup} >
       <TouchableOpacity onPress={() => navigation.navigate('Index')}>
-          <Image style={styles.cellarIcon} source={require('../img/view_icon.png')} />
+          <Image style={styles.cellarIcon} source={require('../img/view_cellar.png')} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Create')}>
-          <Image style={styles.addIcon} source={require('../img/add_icon-1.png')} />
+          <Image style={styles.addIcon} source={require('../img/add_beer.png')} />
         </TouchableOpacity>
       </View>
     </View>
@@ -40,22 +39,23 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   cellarIcon: {
-    height: 170,
+    height: 147,
     width: 140,
-    marginLeft: 50,
-    marginTop: 10,
+    marginLeft: 35,
+    marginTop: 105,
   },
   addIcon: {
-    height: 180,
-    width: 80,
-    marginRight: 60,
+    height: 147,
+    width: 112,
+    marginRight: 35,
+    marginTop: 105,
   },
   image: {
-    marginTop: 40,
+    marginTop: 50,
     paddingTop: 125,
     paddingBottom: 125,
-    height: 340,
-    width: 340,
+    height: 320,
+    width: 320,
     alignSelf: 'center',
   }
 
