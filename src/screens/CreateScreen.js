@@ -25,7 +25,7 @@ CreateScreen.navigationOptions = () => {
           alignSelf: 'center',
           resizeMode: 'contain',
         }}
-        source={require('../img/title1.png')}
+        source={require('../img/header.png')}
       />
     ),
     headerBackTitle: 'Back',

@@ -60,7 +60,7 @@ IndexScreen.navigationOptions = ({ navigation }) => {
           alignSelf: 'center',
           resizeMode: 'contain',
         }}
-        source={require('../img/title1.png')}
+        source={require('../img/header.png')}
       />
     ),
     headerTintColor: 'black'
