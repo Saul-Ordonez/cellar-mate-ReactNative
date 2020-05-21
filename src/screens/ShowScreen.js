@@ -11,19 +11,19 @@ const ShowScreen = ({ navigation }) => {
   return (
     <ScrollView>
     <View style={styles.viewStyle}>
-      <View style={styles.nameStyle}>
+      <View style={styles.labels}>
         <Text style={styles.labelStyle}>BEER NAME</Text>
        <Text style={styles.input}>{beer.name}</Text>
       </View>
-      <View style={styles.breweryStyle}>
+      <View style={styles.labels}>
         <Text style={styles.labelStyle}>BREWERY</Text>
         <Text style={styles.input}>{beer.brewery}</Text>
       </View>
-      <View style={styles.styleStyle} >
+      <View style={styles.labels} >
         <Text style={styles.labelStyle}>STYLE</Text>
         <Text style={styles.input}>{beer.beerStyle}</Text>
       </View>
-      <View style={styles.dateStyle}>
+      <View style={styles.labels}>
         <Text style={styles.labelStyle}>DATE BOTTLED</Text>
         <Text style={styles.input}>{beer.bottleDate}</Text>
       </View>
@@ -37,7 +37,7 @@ const ShowScreen = ({ navigation }) => {
         <Text style={styles.input}>{beer.ibu}</Text>
       </View>
       </View>
-      <View style={styles.descriptionStyle}>
+      <View style={styles.labels}>
         <Text style={styles.labelStyle}>DESCRIPTION</Text>
         <Text style={styles.input}>{beer.description}</Text>
       </View>
@@ -104,12 +104,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     // backgroundColor: '#eee9e2',
     paddingHorizontal: 30,
+    marginVertical: 5
   },
   ibuStyle: {
     alignItems: 'center',
     justifyContent: 'space-between',
     // backgroundColor: '#eee9e2',
     paddingHorizontal: 30,
+    marginVertical: 5
   },
   numberGroups: {
     flexDirection: 'row',
@@ -135,6 +137,12 @@ const styles = StyleSheet.create({
   //   backgroundColor: '#ffffff',
   //   paddingHorizontal: 120,
   // },
+  // labels: {
+  //   paddingVertical: 5,
+  //   borderWidth: 1,
+  //   borderColor: 'red',
+  //   paddingHorizontal: 30
+  // }
 });
 
 export default ShowScreen;
