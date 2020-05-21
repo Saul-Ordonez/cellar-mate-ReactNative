@@ -20,11 +20,11 @@ const ShowScreen = ({ navigation }) => {
       <Text style={styles.labelStyle}>DATE BOTTLED</Text>
       <Text style={styles.input}>{beer.bottleDate}</Text>
     <View style={styles.abvIbuLabel}>
-      <Text style={styles.labelStyle}>ABV{'                  '}</Text>
+      <Text style={styles.labelStyle}>ABV</Text>
       <Text style={styles.labelStyle}>IBU</Text>
     </View>
     <View style={styles.abvIbuInput}>
-  <Text style={styles.input}>{beer.abv}%{'                    '}</Text>
+      <Text style={styles.input}>{beer.abv}%</Text>
       <Text style={styles.input}>{beer.ibu}</Text>
     </View>
       <Text style={styles.labelStyle}>DESCRIPTION</Text>
@@ -74,11 +74,13 @@ const styles = StyleSheet.create({
     marginTop: 15,
     fontSize: 24,
     fontFamily: 'AvenirNextCondensed-DemiBold',
+    textAlign: 'center',
   },
   input: {
     fontFamily: 'AvenirNextCondensed-Regular',
     fontSize: 24,
     marginHorizontal: 10,
+    textAlign: 'center',
   },
   viewStyle: {
     alignItems: 'center',
