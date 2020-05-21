@@ -19,13 +19,15 @@ const ShowScreen = ({ navigation }) => {
       <Text style={styles.input}>{beer.beerStyle}</Text>
       <Text style={styles.labelStyle}>DATE BOTTLED</Text>
       <Text style={styles.input}>{beer.bottleDate}</Text>
-    <View style={styles.abvIbuLabel}>
+    <View style={styles.numberGroups} >
+    <View style={styles.abvStyle}>
       <Text style={styles.labelStyle}>ABV</Text>
-      <Text style={styles.labelStyle}>IBU</Text>
-    </View>
-    <View style={styles.abvIbuInput}>
       <Text style={styles.input}>{beer.abv}%</Text>
+    </View>
+    <View style={styles.ibuStyle}>
+      <Text style={styles.labelStyle}>IBU</Text>
       <Text style={styles.input}>{beer.ibu}</Text>
+    </View>
     </View>
       <Text style={styles.labelStyle}>DESCRIPTION</Text>
       <Text style={styles.input}>{beer.description}</Text>
@@ -85,18 +87,20 @@ const styles = StyleSheet.create({
   viewStyle: {
     alignItems: 'center',
     backgroundColor: '#ded7cd',
-    paddingBottom: 200,
+    paddingBottom: 230,
     paddingTop: 10,
   },
-  abvIbuLabel: {
-    flexDirection: 'row',
+  abvStyle: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginRight: 30
+  },
+  ibuStyle: {
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  abvIbuInput: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+  numberGroups: {
+    flexDirection: 'row'
   }
 });
 

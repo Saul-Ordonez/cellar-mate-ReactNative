@@ -14,9 +14,6 @@ const CreateBeerForm = ({ onSubmit, initialValues }) => {
   return (
   <ScrollView>
     <View style={styles.mainView}>
-      <TouchableOpacity onPress={() => onSubmit(name, brewery, beerStyle, bottleDate, abv, ibu, description)} style={styles.btnStyle} >
-        <Text style={styles.btnTextStyle}>SAVE BEER</Text>
-      </TouchableOpacity>
       <Text style={styles.label}>BEER NAME</Text>
       <TextInput 
         style={styles.input} 
@@ -60,6 +57,9 @@ const CreateBeerForm = ({ onSubmit, initialValues }) => {
         value={description} 
         onChangeText={(text) => setDescription(text)} 
       />
+      <TouchableOpacity onPress={() => onSubmit(name, brewery, beerStyle, bottleDate, abv, ibu, description)} style={styles.btnStyle} >
+        <Text style={styles.btnTextStyle}>SAVE BEER</Text>
+      </TouchableOpacity>
     </View>
   </ScrollView>
   );
