@@ -14,25 +14,28 @@ const CreateBeerForm = ({ onSubmit, initialValues }) => {
   return (
   <ScrollView>
     <View style={styles.mainView}>
-      <Text style={styles.label}>Beer Name</Text>
+      <TouchableOpacity onPress={() => onSubmit(name, brewery, beerStyle, bottleDate, abv, ibu, description)} style={styles.btnStyle} >
+        <Text style={styles.btnTextStyle}>SAVE BEER</Text>
+      </TouchableOpacity>
+      <Text style={styles.label}>BEER NAME</Text>
       <TextInput 
         style={styles.input} 
         value={name} 
         onChangeText={(text) => setName(text)} 
       />
-      <Text style={styles.label}>Brewery</Text>
+      <Text style={styles.label}>BREWERY</Text>
       <TextInput 
         style={styles.input} 
         value={brewery}
         onChangeText={(text) => setBrewery(text)} 
       />
-      <Text style={styles.label}>Style</Text>
+      <Text style={styles.label}>STYLE</Text>
       <TextInput 
         style={styles.input} 
         value={beerStyle} 
         onChangeText={(text) => setBeerStyle(text)} 
       />
-      <Text style={styles.label}>Date Bottled</Text>
+      <Text style={styles.label}>DATE BOTTLED</Text>
       <TextInput 
         style={styles.input} 
         value={bottleDate} 
@@ -50,16 +53,13 @@ const CreateBeerForm = ({ onSubmit, initialValues }) => {
         value={ibu} 
         onChangeText={(text) => setIbu(text)} 
       />
-      <Text style={styles.label}>Description / Notes</Text>
+      <Text style={styles.label}>DESCRIPTION / NOTES</Text>
       <TextInput 
         style={styles.input}
         multiline={true}
         value={description} 
         onChangeText={(text) => setDescription(text)} 
       />
-      <TouchableOpacity onPress={() => onSubmit(name, brewery, beerStyle, bottleDate, abv, ibu, description)} style={styles.btnStyle} >
-        <Text style={styles.btnTextStyle}>Save Beer</Text>
-      </TouchableOpacity>
     </View>
   </ScrollView>
   );
@@ -82,21 +82,26 @@ const styles = StyleSheet.create({
     fontSize: 18,
     borderWidth: 1,
     borderColor: 'black',
-    borderRadius: 15,
+    backgroundColor: 'white',
+    borderRadius: 10,
     marginBottom: 15,
     padding: 5,
     margin: 5,
     marginRight: 25,
     marginLeft: 25,
+    fontFamily: 'AvenirNextCondensed-Regular',
   },
   label: {
     fontSize: 20,
     marginBottom: 5,
     marginLeft: 5,
     textAlign: 'center',
+    fontFamily: 'AvenirNextCondensed-DemiBold',
+    fontSize: 22,
   },
   mainView: {
-    marginTop: 15,
+    paddingTop: 15,
+    backgroundColor: '#ded7cd'
   },
   btnStyle: {
     borderWidth: 1,
@@ -113,6 +118,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: 18,
+    fontFamily: 'AvenirNextCondensed-DemiBold',
   }
 });
 

@@ -83,18 +83,22 @@ const styles = StyleSheet.create({
     fontSize: 18,
     paddingBottom: 5,
     fontWeight: 'bold',
+    fontFamily: 'AvenirNextCondensed-DemiBold',
+    fontSize: 22,
   },
   icon: {
     height: 40,
     width: 20,
     marginRight: 10,
+    marginTop: 10,
   },
   addBeerStyle: {
     fontSize: 30,
     marginRight: 10,
   },
   breweryName: {
-
+    fontFamily: 'AvenirNextCondensed-Regular',
+    fontSize: 20,
   },
   listItems: {
     flexDirection: 'column',

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Button, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
 import { Context } from '../context/CellarContext';
 import { EvilIcons } from '@expo/vector-icons';
 
@@ -9,26 +9,32 @@ const ShowScreen = ({ navigation }) => {
   const beer = state.find((beer) => beer.id === navigation.getParam('id'));
 
   return (
+    <ScrollView>
     <View style={styles.viewStyle}>
-      <Text style={styles.labelStyle}>Beer Name</Text>
+      <Text style={styles.labelStyle}>BEER NAME</Text>
       <Text style={styles.input}>{beer.name}</Text>
-      <Text style={styles.labelStyle}>Brewery</Text>
+      <Text style={styles.labelStyle}>BREWERY</Text>
       <Text style={styles.input}>{beer.brewery}</Text>
-      <Text style={styles.labelStyle}>Style</Text>
+      <Text style={styles.labelStyle}>STYLE</Text>
       <Text style={styles.input}>{beer.beerStyle}</Text>
-      <Text style={styles.labelStyle}>Date Bottled</Text>
+      <Text style={styles.labelStyle}>DATE BOTTLED</Text>
       <Text style={styles.input}>{beer.bottleDate}</Text>
-      <Text style={styles.labelStyle}>ABV</Text>
-      <Text style={styles.input}>{beer.abv}%</Text>
+    <View style={styles.abvIbuLabel}>
+      <Text style={styles.labelStyle}>ABV{'                  '}</Text>
       <Text style={styles.labelStyle}>IBU</Text>
+    </View>
+    <View style={styles.abvIbuInput}>
+  <Text style={styles.input}>{beer.abv}%{'                    '}</Text>
       <Text style={styles.input}>{beer.ibu}</Text>
-      <Text style={styles.labelStyle}>Description</Text>
+    </View>
+      <Text style={styles.labelStyle}>DESCRIPTION</Text>
       <Text style={styles.input}>{beer.description}</Text>
       {/* <Button 
         title='Delete'
         onPress={() => deleteBeer(beer.id), () => navigation.navigate('Index')}
       /> */}
     </View>
+    </ScrollView>
   );
 };
 
@@ -65,18 +71,30 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   labelStyle: {
-    fontWeight: 'bold',
     marginTop: 15,
+    fontSize: 24,
+    fontFamily: 'AvenirNextCondensed-DemiBold',
   },
   input: {
-
+    fontFamily: 'AvenirNextCondensed-Regular',
+    fontSize: 24,
+    marginHorizontal: 10,
   },
   viewStyle: {
     alignItems: 'center',
     backgroundColor: '#ded7cd',
-    paddingBottom: 500,
+    paddingBottom: 200,
     paddingTop: 10,
-    
+  },
+  abvIbuLabel: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  abvIbuInput: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   }
 });
 
