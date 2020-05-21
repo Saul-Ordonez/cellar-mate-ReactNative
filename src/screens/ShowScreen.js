@@ -103,14 +103,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     // backgroundColor: '#eee9e2',
-    paddingHorizontal: 30,
+    paddingHorizontal: 20,
     marginVertical: 5
   },
   ibuStyle: {
     alignItems: 'center',
     justifyContent: 'space-between',
     // backgroundColor: '#eee9e2',
-    paddingHorizontal: 30,
+    paddingHorizontal: 20,
     marginVertical: 5
   },
   numberGroups: {
