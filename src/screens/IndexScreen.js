@@ -34,7 +34,10 @@ const IndexScreen = ({ navigation }) => {
               <Text style={styles.breweryName}>{item.brewery}</Text>
               </View>
               <TouchableOpacity onPress={() => deleteBeer(item.id)}>
-                <Feather style={styles.icon} name='trash' />
+                <Image
+                  style={styles.icon}
+                  source={require('../img/opener.png')}
+                />
               </TouchableOpacity>
             </View>
           </TouchableOpacity>
@@ -82,7 +85,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   icon: {
-    fontSize: 24,
+    height: 40,
+    width: 20,
+    marginRight: 10,
   },
   addBeerStyle: {
     fontSize: 30,
