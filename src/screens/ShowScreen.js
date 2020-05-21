@@ -103,14 +103,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     // backgroundColor: '#eee9e2',
-    paddingHorizontal: 50,
-    paddingRight: 75
+    paddingHorizontal: 30,
   },
   ibuStyle: {
     alignItems: 'center',
     justifyContent: 'space-between',
     // backgroundColor: '#eee9e2',
-    paddingHorizontal: 50,
+    paddingHorizontal: 30,
   },
   numberGroups: {
     flexDirection: 'row',

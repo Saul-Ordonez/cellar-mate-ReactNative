@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 const CreateBeerForm = ({ onSubmit, initialValues }) => {
   const [name, setName] = useState(initialValues.name);
   const [brewery, setBrewery] = useState(initialValues.brewery);
-  const [beerStyle, setBeerStyle] = useState(initialValues.description);
+  const [beerStyle, setBeerStyle] = useState(initialValues.beerStyle);
   const [bottleDate, setBottleDate] = useState(initialValues.bottleDate);
   const [abv, setAbv] = useState(initialValues.abv);
   const [ibu, setIbu] = useState(initialValues.ibu);
   const [description, setDescription] = useState(initialValues.description);
 
   return (
-  <ScrollView>
+  <KeyboardAwareScrollView>
     <View style={styles.mainView}>
       <Text style={styles.label}>BEER NAME</Text>
       <TextInput 
@@ -61,7 +62,7 @@ const CreateBeerForm = ({ onSubmit, initialValues }) => {
         <Text style={styles.btnTextStyle}>SAVE BEER</Text>
       </TouchableOpacity>
     </View>
-  </ScrollView>
+  </KeyboardAwareScrollView>
   );
 };
 

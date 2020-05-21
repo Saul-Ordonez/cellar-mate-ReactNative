@@ -4,10 +4,10 @@ import { View, Text, StyleSheet, Button, Image, TouchableOpacity } from 'react-n
 const HomeScreen = ({ navigation }) => {
   return (
     <View 
-      // style={{
-      //   backgroundColor: '#0a2165', 
-      //   paddingBottom: 150,
-      // }} 
+      style={{
+        backgroundColor: '#ded7cd', 
+        paddingBottom: 150,
+      }} 
     >
       <Image
         style={styles.image}
