@@ -11,26 +11,36 @@ const ShowScreen = ({ navigation }) => {
   return (
     <ScrollView>
     <View style={styles.viewStyle}>
-      <Text style={styles.labelStyle}>BEER NAME</Text>
-      <Text style={styles.input}>{beer.name}</Text>
-      <Text style={styles.labelStyle}>BREWERY</Text>
-      <Text style={styles.input}>{beer.brewery}</Text>
-      <Text style={styles.labelStyle}>STYLE</Text>
-      <Text style={styles.input}>{beer.beerStyle}</Text>
-      <Text style={styles.labelStyle}>DATE BOTTLED</Text>
-      <Text style={styles.input}>{beer.bottleDate}</Text>
-    <View style={styles.numberGroups} >
-    <View style={styles.abvStyle}>
-      <Text style={styles.labelStyle}>ABV</Text>
-      <Text style={styles.input}>{beer.abv}%</Text>
-    </View>
-    <View style={styles.ibuStyle}>
-      <Text style={styles.labelStyle}>IBU</Text>
-      <Text style={styles.input}>{beer.ibu}</Text>
-    </View>
-    </View>
-      <Text style={styles.labelStyle}>DESCRIPTION</Text>
-      <Text style={styles.input}>{beer.description}</Text>
+      <View style={styles.nameStyle}>
+        <Text style={styles.labelStyle}>BEER NAME</Text>
+       <Text style={styles.input}>{beer.name}</Text>
+      </View>
+      <View style={styles.breweryStyle}>
+        <Text style={styles.labelStyle}>BREWERY</Text>
+        <Text style={styles.input}>{beer.brewery}</Text>
+      </View>
+      <View style={styles.styleStyle} >
+        <Text style={styles.labelStyle}>STYLE</Text>
+        <Text style={styles.input}>{beer.beerStyle}</Text>
+      </View>
+      <View style={styles.dateStyle}>
+        <Text style={styles.labelStyle}>DATE BOTTLED</Text>
+        <Text style={styles.input}>{beer.bottleDate}</Text>
+      </View>
+      <View style={styles.numberGroups} >
+      <View style={styles.abvStyle}>
+        <Text style={styles.labelStyle}>ABV</Text>
+        <Text style={styles.input}>{beer.abv}%</Text>
+      </View>
+      <View style={styles.ibuStyle}>
+        <Text style={styles.labelStyle}>IBU</Text>
+        <Text style={styles.input}>{beer.ibu}</Text>
+      </View>
+      </View>
+      <View style={styles.descriptionStyle}>
+        <Text style={styles.labelStyle}>DESCRIPTION</Text>
+        <Text style={styles.input}>{beer.description}</Text>
+      </View>
       {/* <Button 
         title='Delete'
         onPress={() => deleteBeer(beer.id), () => navigation.navigate('Index')}
@@ -88,20 +98,44 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#ded7cd',
     paddingBottom: 230,
-    paddingTop: 10,
   },
   abvStyle: {
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginRight: 30
+    // backgroundColor: '#eee9e2',
+    paddingHorizontal: 50,
+    paddingRight: 75
   },
   ibuStyle: {
     alignItems: 'center',
     justifyContent: 'space-between',
+    // backgroundColor: '#eee9e2',
+    paddingHorizontal: 50,
   },
   numberGroups: {
-    flexDirection: 'row'
-  }
+    flexDirection: 'row',
+
+  },
+  // nameStyle: {
+  //   backgroundColor: '#fba43a',
+  //   paddingHorizontal: 120,
+  // },
+  // breweryStyle: {
+  //   backgroundColor: '#eac292',
+  //   paddingHorizontal: 120,
+  // },
+  // dateStyle: {
+  //   backgroundColor: '#ded7cd',
+  //   paddingHorizontal: 120,
+  // },
+  // styleStyle: {
+  //   backgroundColor: '#e3cdb3',
+  //   paddingHorizontal: 120,
+  // },
+  // descriptionStyle: {
+  //   backgroundColor: '#ffffff',
+  //   paddingHorizontal: 120,
+  // },
 });
 
 export default ShowScreen;
